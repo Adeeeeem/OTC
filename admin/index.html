@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<!-- Title -->
+		<title>OTC</title>
+		<!-- The Author of this page -->
+		<meta name="author" content="Mohamed Adem Ben Moussa">
+		<!-- Specify the character encoding of your content -->
+		<meta charset="UTF-8">
+		<!-- Tell Internet Explorer to use the latest Rendering Engine -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- Setting the viewport to make your website look good on all devices -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Basic SEO -->
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<!-- Robot.txt file to exclude Web Robots for specific files -->
+		<meta name="robots" content="noindex, nofollow">
+		<!-- Icon -->
+		<link rel="shortcut icon" type="image/png" href="../img/logo.png">
+		<!-- Google Fonts -->
+		<link rel="stylesheet" href="../fonts/Cairo/Cairo.css">
+		<!-- UIkit CSS 3.1.5 -->
+		<link rel="stylesheet" type="text/css" href="../css/uikit/uikit.min.css">
+		<!-- Toastr CSS 2.1.3 -->
+		<link rel="stylesheet" type="text/css" href="../css/toastr/toastr.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	</head>
+	<body>
+
+		<!-- Preloader -->
+		<div id="preloader">
+			<div id="status">
+				&nbsp;
+			</div>
+		</div>
+		<!-- End Preloader -->
+
+		<div id="outer-home">
+			<div id="inner-home" uk-grid>
+				<!-- Left Menu -->
+				<div id="left-menu" class="uk-width-1-6">
+					<div class="uk-text-center"><img src="../img/logo.png"></div>
+					<!-- Left Menu Buttons -->
+					<ul class="uk-nav uk-nav-default uk-text-center" uk-switcher="connect: #sections; animation: uk-animation-fade;">
+						<li><button class="uk-button uk-width-1-1 otc-btn" uk-tooltip="Gérer les Administrateurs">Administrateurs</button></li>
+						<li><button class="uk-button uk-width-1-1 otc-btn" uk-tooltip="Gérer les Archivistes">Archivistes</button></li>
+						<li><button class="uk-button uk-width-1-1 otc-btn" uk-tooltip="Gérer les Techniciens">Techniciens</button></li>
+						<li><button class="uk-button uk-width-1-1 otc-btn" uk-tooltip="Gérer les Arrondissements">Arrondissements</button></li>
+						<li><button class="uk-button uk-width-1-1 otc-btn" uk-tooltip="Consulter l'Historique">Historique</button></li>
+						<li><button class="uk-button uk-width-1-1 otc-btn logout-btn" uk-tooltip="Déconnexion">Déconnexion</button></li>
+					</ul>
+				</div>
+				<!-- Home Sections -->
+				<div id="home" class="uk-width-expand">
+					<div class="uk-text-center">
+						<h1 class="uk-heading-small home-heading"><span>O</span>ffice de la <span>T</span>opographie et du <span>C</span>adastre</h1>
+					</div>
+					<ul id="sections" class="uk-switcher uk-margin">
+						<!-- Manage Administrators -->
+						<li>
+							<div class="uk-text-center">
+								<h3>Gérer les Administrateurs</h3>
+								<div id="admin-btn" uk-margin>
+									<button id="add-admin-btn" class="uk-button otc-btn" uk-tooltip="Ajouter un Administrateur">Ajouter</button>
+									<button id="edit-admin-btn" class="uk-button otc-btn" uk-tooltip="Éditer un Administrateur">Éditer</button>
+									<button id="delete-admin-btn" class="uk-button otc-btn" uk-tooltip="Supprimer un Administrateur">Supprimer</button>
+								</div>
+								<div id="admin">
+									<!-- Add Technician -->
+									<div id="add-admin">
+										<h3>Ajouter un Administrateur</h3>
+										<form uk-grid>
+											<!-- Matricule -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-admin-matricule">Matricule</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+														<input id="add-admin-matricule" class="uk-input" type="text" placeholder="Matricule Archiviste">
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="add-admin-matricule-error"><small>Ce champ est obligatoire !</small></div>
+												<div id="add-admin-exists-error"><small>Il semble que cet Administrateur existe déjà !</small></div>
+											</div>
+											<!-- Password -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-admin-password">Mot de Passe</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: lock"></span>
+														<input id="add-admin-password" class="uk-input" type="text" placeholder="Mot de Passe Archiviste">
+													</div>
+												</div>
+												<!-- Necessary Password Error -->
+												<div id="add-admin-password-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- First Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-admin-fname">Prénom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: user"></span>
+														<input id="add-admin-fname" class="uk-input" type="text" placeholder="Prénom Administrateur">
+													</div>
+												</div>
+												<!-- Necessary First Name Error -->
+												<div id="add-admin-fname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Last Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-admin-lname">Nom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: user"></span>
+														<input id="add-admin-lname" class="uk-input" type="text" placeholder="Nom Administrateur">
+													</div>
+												</div>
+												<!-- Necessary Last Name Error -->
+												<div id="add-admin-lname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Arrondissement -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-admin-arrondissement">Arrondissement</label></div>
+													<div class="uk-form-controls">
+														<select class="uk-input uk-select" id="add-admin-arrondissement">
+															<!-- Data will be loaded from JavaScript -->
+															<option selected hidden disabled>Arrondissement Administrateur</option>
+														</select>
+													</div>
+												</div>
+												<!-- Necessary Arrondissement Error -->
+												<div id="add-admin-arrondissement-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Confirm Button -->
+											<div class="uk-width-1-2">
+												<button id="confirm-add-admin" class="uk-button otc-btn uk-width-1-1">Terminé</button>
+											</div>
+										</form>
+									</div>
+									<!-- Edit Technician -->
+									<div id="edit-admin">
+										<h3>Éditer un Administrateur</h3>
+										<form uk-grid>
+											<!-- Matricule -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-center"><label class="uk-form-label" for="edit-admin-matricule">Recherche Administrateur par Matricule</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+														<input id="edit-admin-matricule" class="uk-input" type="text" placeholder="Matricule Administrateur">
+													</div>
+													<!-- Necessary Matricule Error -->
+													<div id="edit-admin-matricule-error"><small>Ce champ est obligatoire !</small></div>
+													<!-- Matricule Doesn't Exists Error -->
+													<div id="edit-admin-doesnt-exists-error"><small>Semble que ce matricule n'appartient à aucun Administrateur !</small></div>
+												</div>
+											</div>
+											<!-- Search Button -->
+											<div class="uk-width-1-2">
+												<button id="edit-search-admin" class="uk-button otc-btn uk-width-1-1">Chercher</button>
+											</div>
+											<!-- First Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="edit-admin-fname">Prénom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: user"></span>
+														<input id="edit-admin-fname" class="uk-input" type="text" placeholder="Prénom Administrateur">
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="edit-admin-fname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Last Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="edit-admin-lname">Nom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: user"></span>
+														<input id="edit-admin-lname" class="uk-input" type="text" placeholder="Nom Administrateur">
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="edit-admin-lname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Arrondissement -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="edit-admin-arrondissement">Arrondissement</label></div>
+													<div class="uk-form-controls">
+														<select class="uk-input uk-select" id="edit-admin-arrondissement">
+															<!-- Data will be loaded from JavaScript -->
+															<option selected hidden disabled>Arrondissement Administrateur</option>
+														</select>
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="edit-admin-arrondissement-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Confirm Button -->
+											<div class="uk-width-1-2">
+												<button id="confirm-edit-admin" class="uk-button otc-btn uk-width-1-1">Terminé</button>
+											</div>
+										</form>
+									</div>
+									<!-- Delete Technician -->
+									<div id="delete-admin">
+										<h3>Supprimer un Administrateur</h3>
+										<form uk-grid>
+											<!-- Matricule -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-center"><label class="uk-form-label" for="delete-admin-matricule">Supprimer Administrateur par Matricule</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+														<input id="delete-admin-matricule" class="uk-input" type="text" placeholder="Matricule Technicien">
+													</div>
+													<!-- Necessary Matricule Error -->
+													<div id="delete-admin-matricule-error"><small>Ce champ est obligatoire !</small></div>
+													<!-- Matricule Doesn't Exists Error -->
+													<div id="delete-admin-doesnt-exists-error"><small>Semble que ce matricule n'appartient à aucun Administrateur !</small></div>
+												</div>
+											</div>
+											<!-- Search Button -->
+											<div class="uk-width-1-2">
+												<button id="delete-search-admin" class="uk-button otc-btn uk-width-1-1">Chercher</button>
+											</div>
+											<div id="delete-result" class="uk-width-1-1" uk-grid>
+												<div class="uk-width-1-1 uk-text-center"><h4>Vous êtes sûr de vouloir supprimer l'Administrateur <b><span id="admin-name"></span></b> qui travaille à <b><span id="admin-arrondissement"></span></b> de la liste des Administrateurs</h4></div>
+												<div class="uk-width-1-1 uk-text-center"><button id="yes-delete-admin" class="uk-botton otc-btn uk-width-1-2">Supprimer</button></div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- Manage Archivists -->
+						<li>
+							<div class="uk-text-center">
+								<h3>Gérer les Archivistes</h3>
+								<div id="archivist-btn" uk-margin>
+									<button id="add-archivist-btn" class="uk-button otc-btn" uk-tooltip="Ajouter un Archiviste">Ajouter</button>
+									<button id="edit-archivist-btn" class="uk-button otc-btn" uk-tooltip="Éditer un Archiviste">Éditer</button>
+									<button id="delete-archivist-btn" class="uk-button otc-btn" uk-tooltip="Supprimer un Archiviste">Supprimer</button>
+								</div>
+								<div id="archivist">
+									<!-- Add Archivist -->
+									<div id="add-archivist">
+										<h3>Ajouter un Archiviste</h3>
+										<form uk-grid>
+											<!-- Matricule -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-archivist-matricule">Matricule</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+														<input id="add-archivist-matricule" class="uk-input" type="text" placeholder="Matricule Archiviste">
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="add-archivist-matricule-error"><small>Ce champ est obligatoire !</small></div>
+												<div id="add-archivist-exists-error"><small>Il semble que cet Archiviste existe déjà !</small></div>
+											</div>
+											<!-- Password -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-archivist-password">Mot de Passe</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: lock"></span>
+														<input id="add-archivist-password" class="uk-input" type="text" placeholder="Mot de Passe Archiviste">
+													</div>
+												</div>
+												<!-- Necessary Password Error -->
+												<div id="add-archivist-password-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- First Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-archivist-fname">Prénom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: user"></span>
+														<input id="add-archivist-fname" class="uk-input" type="text" placeholder="Prénom Archiviste">
+													</div>
+												</div>
+												<!-- Necessary First Name Error -->
+												<div id="add-archivist-fname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Last Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-archivist-lname">Nom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: user"></span>
+														<input id="add-archivist-lname" class="uk-input" type="text" placeholder="Nom Archiviste">
+													</div>
+												</div>
+												<!-- Necessary Last Name Error -->
+												<div id="add-archivist-lname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Arrondissement -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-archivist-arrondissement">Arrondissement</label></div>
+													<div class="uk-form-controls">
+														<select class="uk-input uk-select" id="add-archivist-arrondissement">
+															<!-- Data will be loaded from JavaScript -->
+															<option selected hidden disabled>Arrondissement Archiviste</option>
+														</select>
+													</div>
+												</div>
+												<!-- Necessary Arrondissement Error -->
+												<div id="add-archivist-arrondissement-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Confirm Button -->
+											<div class="uk-width-1-2">
+												<button id="confirm-add-archivist" class="uk-button otc-btn uk-width-1-1">Terminé</button>
+											</div>
+										</form>
+									</div>
+									<!-- Edit Archivist -->
+									<div id="edit-archivist">
+										<h3>Éditer un Archiviste</h3>
+										<form uk-grid>
+											<!-- Matricule -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-center"><label class="uk-form-label" for="edit-archivist-matricule">Recherche Archiviste par Matricule</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+														<input id="edit-archivist-matricule" class="uk-input" type="text" placeholder="Matricule Archiviste">
+													</div>
+													<!-- Necessary Matricule Error -->
+													<div id="edit-archivist-matricule-error"><small>Ce champ est obligatoire !</small></div>
+													<!-- Matricule Doesn't Exists Error -->
+													<div id="edit-archivist-doesnt-exists-error"><small>Semble que ce matricule n'appartient à aucun Archiviste !</small></div>
+												</div>
+											</div>
+											<!-- Search Button -->
+											<div class="uk-width-1-2">
+												<button id="edit-search-archivist" class="uk-button otc-btn uk-width-1-1">Chercher</button>
+											</div>
+											<!-- First Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="edit-archivist-fname">Prénom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: user"></span>
+														<input id="edit-archivist-fname" class="uk-input" type="text" placeholder="Prénom Archiviste">
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="edit-archivist-fname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Last Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="edit-archivist-lname">Nom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: user"></span>
+														<input id="edit-archivist-lname" class="uk-input" type="text" placeholder="Nom Archiviste">
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="edit-archivist-lname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Arrondissement -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="edit-archivist-arrondissement">Arrondissement</label></div>
+													<div class="uk-form-controls">
+														<select class="uk-input uk-select" id="edit-archivist-arrondissement">
+															<!-- Data will be loaded from JavaScript -->
+															<option selected hidden disabled>Arrondissement Archiviste</option>
+														</select>
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="edit-archivist-arrondissement-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Confirm Button -->
+											<div class="uk-width-1-2">
+												<button id="confirm-edit-archivist" class="uk-button otc-btn uk-width-1-1">Terminé</button>
+											</div>
+										</form>
+									</div>
+									<!-- Delete Archivist -->
+									<div id="delete-archivist">
+										<h3>Supprimer un Archiviste</h3>
+										<form uk-grid>
+											<!-- Matricule -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-center"><label class="uk-form-label" for="delete-archivist-matricule">Supprimer Archiviste par Matricule</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+														<input id="delete-archivist-matricule" class="uk-input" type="text" placeholder="Matricule Archiviste">
+													</div>
+													<!-- Necessary Matricule Error -->
+													<div id="delete-archivist-matricule-error"><small>Ce champ est obligatoire !</small></div>
+													<!-- Matricule Doesn't Exists Error -->
+													<div id="delete-archivist-doesnt-exists-error"><small>Semble que ce matricule n'appartient à aucun Archiviste !</small></div>
+												</div>
+											</div>
+											<!-- Search Button -->
+											<div class="uk-width-1-2">
+												<button id="delete-search-archivist" class="uk-button otc-btn uk-width-1-1">Chercher</button>
+											</div>
+											<div id="delete-result" class="uk-width-1-1" uk-grid>
+												<div class="uk-width-1-1 uk-text-center"><h4>Vous êtes sûr de vouloir supprimer l’Archiviste <b><span id="archivist-name"></span></b> qui travaille à <b><span id="archivist-arrondissement"></span></b> de la liste des Archivistes</h4></div>
+												<div class="uk-width-1-1 uk-text-center"><button id="yes-delete-archivist" class="uk-botton otc-btn uk-width-1-2">Supprimer</button></div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- Manage Technicians -->
+						<li>
+							<div class="uk-text-center">
+								<h3>Gérer les Techniciens</h3>
+								<div id="technician-btn" uk-margin>
+									<button id="add-technician-btn" class="uk-button otc-btn" uk-tooltip="Ajouter un Technicien">Ajouter</button>
+									<button id="edit-technician-btn" class="uk-button otc-btn" uk-tooltip="Éditer un Technicien">Éditer</button>
+									<button id="delete-technician-btn" class="uk-button otc-btn" uk-tooltip="Supprimer un Technicien">Supprimer</button>
+								</div>
+								<div id="technician">
+									<!-- Add Technician -->
+									<div id="add-technician">
+										<h3>Ajouter un Technicien</h3>
+										<form uk-grid>
+											<!-- Matricule -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-technician-matricule">Matricule</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+														<input id="add-technician-matricule" class="uk-input" type="text" placeholder="Matricule Archiviste">
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="add-technician-matricule-error"><small>Ce champ est obligatoire !</small></div>
+												<div id="add-technician-exists-error"><small>Il semble que cet Technicien existe déjà !</small></div>
+											</div>
+											<!-- Password -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-technician-password">Mot de Passe</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: lock"></span>
+														<input id="add-technician-password" class="uk-input" type="text" placeholder="Mot de Passe Archiviste">
+													</div>
+												</div>
+												<!-- Necessary Password Error -->
+												<div id="add-technician-password-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- First Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-technician-fname">Prénom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: user"></span>
+														<input id="add-technician-fname" class="uk-input" type="text" placeholder="Prénom Technicien">
+													</div>
+												</div>
+												<!-- Necessary First Name Error -->
+												<div id="add-technician-fname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Last Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-technician-lname">Nom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: user"></span>
+														<input id="add-technician-lname" class="uk-input" type="text" placeholder="Nom Technicien">
+													</div>
+												</div>
+												<!-- Necessary Last Name Error -->
+												<div id="add-technician-lname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Arrondissement -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-technician-arrondissement">Arrondissement</label></div>
+													<div class="uk-form-controls">
+														<select class="uk-input uk-select" id="add-technician-arrondissement">
+															<!-- Data will be loaded from JavaScript -->
+															<option selected hidden disabled>Arrondissement Technicien</option>
+														</select>
+													</div>
+												</div>
+												<!-- Necessary Arrondissement Error -->
+												<div id="add-technician-arrondissement-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Confirm Button -->
+											<div class="uk-width-1-2">
+												<button id="confirm-add-technician" class="uk-button otc-btn uk-width-1-1">Terminé</button>
+											</div>
+										</form>
+									</div>
+									<!-- Edit Technician -->
+									<div id="edit-technician">
+										<h3>Éditer un Technicien</h3>
+										<form uk-grid>
+											<!-- Matricule -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-center"><label class="uk-form-label" for="edit-technician-matricule">Recherche Technicien par Matricule</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+														<input id="edit-technician-matricule" class="uk-input" type="text" placeholder="Matricule Technicien">
+													</div>
+													<!-- Necessary Matricule Error -->
+													<div id="edit-technician-matricule-error"><small>Ce champ est obligatoire !</small></div>
+													<!-- Matricule Doesn't Exists Error -->
+													<div id="edit-technician-doesnt-exists-error"><small>Semble que ce matricule n'appartient à aucun Technicien !</small></div>
+												</div>
+											</div>
+											<!-- Search Button -->
+											<div class="uk-width-1-2">
+												<button id="edit-search-technician" class="uk-button otc-btn uk-width-1-1">Chercher</button>
+											</div>
+											<!-- First Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="edit-technician-fname">Prénom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: user"></span>
+														<input id="edit-technician-fname" class="uk-input" type="text" placeholder="Prénom Technicien">
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="edit-technician-fname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Last Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="edit-technician-lname">Nom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: user"></span>
+														<input id="edit-technician-lname" class="uk-input" type="text" placeholder="Nom Technicien">
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="edit-technician-lname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Arrondissement -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="edit-technician-arrondissement">Arrondissement</label></div>
+													<div class="uk-form-controls">
+														<select class="uk-input uk-select" id="edit-technician-arrondissement">
+															<!-- Data will be loaded from JavaScript -->
+															<option selected hidden disabled>Arrondissement Technicien</option>
+														</select>
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="edit-technician-arrondissement-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Confirm Button -->
+											<div class="uk-width-1-2">
+												<button id="confirm-edit-technician" class="uk-button otc-btn uk-width-1-1">Terminé</button>
+											</div>
+										</form>
+									</div>
+									<!-- Delete Technician -->
+									<div id="delete-technician">
+										<h3>Supprimer un Technicien</h3>
+										<form uk-grid>
+											<!-- Matricule -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-center"><label class="uk-form-label" for="delete-technician-matricule">Supprimer Technicien par Matricule</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+														<input id="delete-technician-matricule" class="uk-input" type="text" placeholder="Matricule Technicien">
+													</div>
+													<!-- Necessary Matricule Error -->
+													<div id="delete-technician-matricule-error"><small>Ce champ est obligatoire !</small></div>
+													<!-- Matricule Doesn't Exists Error -->
+													<div id="delete-technician-doesnt-exists-error"><small>Semble que ce matricule n'appartient à aucun Technicien !</small></div>
+												</div>
+											</div>
+											<!-- Search Button -->
+											<div class="uk-width-1-2">
+												<button id="delete-search-technician" class="uk-button otc-btn uk-width-1-1">Chercher</button>
+											</div>
+											<div id="delete-result" class="uk-width-1-1" uk-grid>
+												<div class="uk-width-1-1 uk-text-center"><h4>Vous êtes sûr de vouloir supprimer le Technicien <b><span id="technician-name"></span></b> qui travaille à <b><span id="technician-arrondissement"></span></b> de la liste des Techniciens</h4></div>
+												<div class="uk-width-1-1 uk-text-center"><button id="yes-delete-technician" class="uk-botton otc-btn uk-width-1-2">Supprimer</button></div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- Manage Arrondissements -->
+						<li>
+							<div class="uk-text-center">
+								<h3>Gérer les Arrondissements</h3>
+								<div id="arrondissement">
+									<!-- Add Arrondissements -->
+									<div id="add-arrondissement">
+										<h3>Ajouter un Arrondissement</h3>
+										<form uk-grid>
+											<!-- Matricule -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-arrondissement-matricule">Code</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+														<input id="add-arrondissement-matricule" class="uk-input" type="text" placeholder="Code Arrondissement">
+													</div>
+												</div>
+												<!-- Necessary Matricule Error -->
+												<div id="add-arrondissement-matricule-error"><small>Ce champ est obligatoire !</small></div>
+												<div id="add-arrondissement-exists-error"><small>Il semble que cet Arrondissement existe déjà !</small></div>
+											</div>
+											<!-- Name -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-arrondissement-fname">Nom</label></div>
+													<div class="uk-inline uk-width-1-1">
+														<span class="uk-form-icon" uk-icon="icon: home"></span>
+														<input id="add-arrondissement-fname" class="uk-input" type="text" placeholder="Nom Arrondissement">
+													</div>
+												</div>
+												<!-- Necessary First Name Error -->
+												<div id="add-arrondissement-fname-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Direction -->
+											<div class="uk-width-1-2">
+												<div class="uk-margin">
+													<div class="uk-text-left"><label class="uk-form-label" for="add-arrondissement-arrondissement">Arrondissement</label></div>
+													<div class="uk-form-controls">
+														<select class="uk-input uk-select" id="add-arrondissement-arrondissement">
+															<!-- Data will be loaded from JavaScript -->
+															<option selected hidden disabled>Direction Arrondissement</option>
+														</select>
+													</div>
+												</div>
+												<!-- Necessary Arrondissement Error -->
+												<div id="add-arrondissement-arrondissement-error"><small>Ce champ est obligatoire !</small></div>
+											</div>
+											<!-- Confirm Button -->
+											<div class="uk-width-1-2">
+												<button id="confirm-add-arrondissement" class="uk-button otc-btn uk-width-1-1">Terminé</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- View History -->
+						<li>
+							<div class="uk-text-center">
+								<h3>Consulter l'Historique</h3>
+								<div id="admin-history">
+									<form uk-grid>
+										<!-- Search History by Date -->
+										<div class="uk-width-1-2">
+											<div class="uk-grid">
+												<div class="uk-width-1-2">
+													<div class="uk-margin">
+														<div class="uk-text-left"><label class="uk-form-label" for="history-start-date">Date de Début</label></div>
+														<input id="history-start-date" class="uk-input" type="date">
+													</div>
+												</div>
+												<div class="uk-width-1-2">
+													<div class="uk-margin">
+														<div class="uk-text-left"><label class="uk-form-label" for="history-end-date">Date de Fin</label></div>
+														<input id="history-end-date" class="uk-input" type="date">
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Search History by Time -->
+										<div class="uk-width-1-2">
+											<div class="uk-grid">
+												<div class="uk-width-1-2">
+													<div class="uk-grid">
+														<div class="uk-width-1-2">
+															<div class="uk-margin">
+																<div class="uk-text-left"><label class="uk-form-label" for="history-start-time-hours">Heure de Début</label></div>
+																<div class="uk-width-1-1"><input id="history-start-time-hours" class="uk-input" type="number" min="0" max="23" placeholder="Heure"></div>
+															</div>
+														</div>
+														<div class="uk-width-1-2">
+															<div class="uk-margin">
+																<div class="uk-text-left"><label class="uk-form-label" for="history-start-time-minutes">et Minutes</label></div>
+																<div class="uk-width-1-1">  <input id="history-start-time-minutes" class="uk-input" type="number" min="0" max="59" placeholder="Minutes"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="uk-width-1-2">
+													<div class="uk-grid">
+														<div class="uk-width-1-2">
+															<div class="uk-margin">
+																<div class="uk-text-left"><label class="uk-form-label" for="history-end-time-hours">Heure de Fin</label></div>
+																<div class="uk-width-1-1"><input id="history-end-time-hours" class="uk-input" type="number" min="0" max="23" placeholder="Heure"></div>
+															</div>
+														</div>
+														<div class="uk-width-1-2">
+															<div class="uk-margin">
+																<div class="uk-text-left"><label class="uk-form-label" for="history-end-time-minutes">et Minutes</label></div>
+																<div class="uk-width-1-1">  <input id="history-end-time-minutes" class="uk-input" type="number" min="0" max="59" placeholder="Minutes"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Search Button -->
+										<div class="uk-width-1-1">
+											<button id="search-history" class="uk-button otc-btn uk-width-1-3">Recherche</button>
+										</div>
+									</form>
+									<table class="uk-table uk-table-divider uk-table-hover uk-width-1-1">
+										<thead>
+											<tr>
+												<th>Matricule</th>
+												<th>Nom</th>
+												<th>Tâche</th>
+												<th>Date</th>
+												<th>Heure</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- DATA will be dispayed here from JavaScript -->
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- jQuery JavaScript 3.4.1 -->
+		<script type="text/javascript" src="../js/jquery/jquery-3.4.1.min.js"></script>
+		<!-- UIkit JavaScript 3.1.5 -->
+		<script type="text/javascript" src="../js/uikit/uikit.min.js"></script>
+		<!-- UIkit Icons JavaScript 3.1.5 -->
+		<script type="text/javascript" src="../js/uikit/uikit-icons.min.js"></script>
+		<!-- Toastr JavaScript 2.1.3 -->
+		<script type="text/javascript" src="../js/toastr/toastr.min.js"></script>
+		<!-- Custom JavaScript -->
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>

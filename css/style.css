@@ -1,0 +1,770 @@
+/*=============================
+	HTML and Body
+=============================*/
+*
+{
+	margin: 0;
+	padding: 0;
+}
+html,
+body
+{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	color: #333;
+	font-family: "Cairo", sans-serif;
+}
+body
+{
+	background-color: #00a54f;
+}
+p
+{
+	font-size: 12px;
+}
+a
+{
+	text-decoration: none;
+}
+label
+{
+	color: #333;
+	font-weight: bold;
+	font-family: "Cairo", sans-serif;
+	letter-spacing: 1px;
+}
+/*=============================
+	Hide some Blocs
+=============================*/
+#edit-admin,
+#delete-admin,
+#admin #delete-result,
+#edit-archivist,
+#delete-archivist,
+#archivist #delete-result,
+#edit-technician,
+#delete-technician,
+#technician #delete-result,
+#edit-arrondissement,
+#delete-arrondissement,
+#arrondissement #delete-result,
+#archive-result
+{
+	display: none;
+}
+/*=============================
+	UIkit Framework Modifications
+=============================*/
+.uk-grid-divider>:not(.uk-first-column)::before
+{
+	border-left: 3px solid #00a54f;
+}
+.uk-input
+{
+	border: 1px solid #999;
+	border-radius: .25rem;
+}
+div.uk-margin
+{
+	margin-bottom: 5px;
+}
+.uk-card-body
+{
+	padding-bottom: 5px;
+}
+.uk-checkbox
+{
+	border: 1px solid #999;
+}
+.uk-table th,
+.uk-table td
+{
+	color: #333;
+	text-align: center;
+	font-family: "Cairo", sans-serif;
+}
+.uk-table th
+{
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+.uk-table-hover tbody tr:hover,
+.uk-table-hover>tr:hover
+{
+	background: rgba(0, 165, 79, 0.2);
+}
+/*=============================
+		Main Button
+=============================*/
+.otc-btn
+{
+	background-color: #00a54f;
+	color: #fff;
+	border-radius: .20rem;
+	letter-spacing: 1px;
+	font-size: 14px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+	border: 1px solid #333;
+	line-height: 30px;
+}
+.otc-btn:focus,
+.otc-btn:hover
+{
+	background-color: #007237;
+}
+/*=============================
+		Errors
+=============================*/
+#invalid-signin-matricule,
+#invalid-signin-password,
+#add-admin-matricule-error,
+#add-admin-password-error,
+#add-admin-fname-error,
+#add-admin-lname-error,
+#add-admin-arrondissement-error,
+#add-admin-exists-error,
+#edit-admin-matricule-error,
+#edit-admin-doesnt-exists-error,
+#edit-admin-fname-error,
+#edit-admin-lname-error,
+#edit-admin-arrondissement-error,
+#delete-admin-matricule-error,
+#delete-admin-doesnt-exists-error,
+#add-archivist-matricule-error,
+#add-archivist-password-error,
+#add-archivist-fname-error,
+#add-archivist-lname-error,
+#add-archivist-arrondissement-error,
+#add-archivist-exists-error,
+#edit-archivist-matricule-error,
+#edit-archivist-doesnt-exists-error,
+#edit-archivist-fname-error,
+#edit-archivist-lname-error,
+#edit-archivist-arrondissement-error,
+#delete-archivist-matricule-error,
+#delete-archivist-doesnt-exists-error,
+#add-technician-matricule-error,
+#add-technician-password-error,
+#add-technician-fname-error,
+#add-technician-lname-error,
+#add-technician-arrondissement-error,
+#add-technician-exists-error,
+#edit-technician-matricule-error,
+#edit-technician-doesnt-exists-error,
+#edit-technician-fname-error,
+#edit-technician-lname-error,
+#edit-technician-arrondissement-error,
+#delete-technician-matricule-error,
+#delete-technician-doesnt-exists-error,
+#add-arrondissement-matricule-error,
+#add-arrondissement-exists-error,
+#add-arrondissement-fname-error,
+#add-arrondissement-arrondissement-error,
+#add-receipt-number-error,
+#add-receipt-date-error,
+#add-receipt-user-error,
+#add-folder-number-error,
+#add-folder-cadastre-error,
+#add-folder-type-error,
+#add-folder-rat-error,
+#add-folder-name-error,
+#add-folder-carton-error,
+#add-folder-plans-error,
+#add-receipt-number-exists-error,
+#pick-receipt-number-error,
+#tipe-receipt-number-error,
+#tipe-receipt-number-doesnt-exist-error
+{
+	color: red;
+	display: none;
+}
+/*=============================
+	404 Not Found Page
+=============================*/
+#P404 h1
+{
+	color: #FFF;
+	font-weight: bold;
+	font-family: 'Cairo', sans-serif;
+}
+/*=============================
+		Preloader
+=============================*/
+#preloader
+{
+	overflow: hidden;
+	background-color: #FFFFFF;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+}
+#status
+{
+	background-image: url("../img/preloader.gif");
+	background-repeat: no-repeat;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -40px;
+	margin-left: -40px;
+}
+/*=============================
+		Sign in Page
+=============================*/
+#signin
+{
+	border-radius: .20rem;
+	box-shadow: 3px 3px 5px #333;
+	width: 350px;
+}
+#signin img
+{
+	padding: 0;
+	margin: 0;
+}
+#signin h3.uk-card-title
+{
+	padding: 0;
+	margin: 0;
+	letter-spacing: 5px;
+	color: #00a54f;
+	font-size: 30px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+}
+#signin-show-password
+{
+	font-weight: 400;
+}
+#signin-btn
+{
+	height: 40px;
+}
+/*=============================
+		Home Page
+=============================*/
+#outer-home
+{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#inner-home
+{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/*=============================
+		Left Menu
+=============================*/
+#left-menu
+{
+	background-color: #ededed;
+	height: 100%;
+	padding: 10px 25px 10px 25px;
+	border: 1px solid #00a54f;
+}
+#left-menu img
+{
+	margin-top: 10%;
+	width: 130px;
+	height: 100px;
+}
+#left-menu .uk-nav li
+{
+	margin-top: 25%;
+}
+#home
+{
+	background-color: #ededed;
+	height: 80%;
+	padding-right: 3.5%;
+}
+#home h1.home-heading
+{
+	font-family: "Cairo", sans-serif;
+	letter-spacing: 2px;
+	color: #333;
+	margin-top: 15px;
+	font-size: 50px;
+}
+#home h1.home-heading span
+{
+	color: #00a54f;
+}
+#sections
+{
+	width: 100%;
+	height: 75%;
+}
+/*=============================
+		Sections
+=============================*/
+#home h3
+{
+	letter-spacing: 3px;
+	color: #00a54f;
+	font-size: 30px;
+	font-family: 'Cairo', sans-serif;
+	font-weight: bold;
+}
+/*=============================
+	Manage Admin Section
+=============================*/
+#admin-btn button
+{
+	width: 200px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+#admin
+{
+	margin-top: 50px;
+}
+#admin label
+{
+	font-family: 'Cairo', sans-serif;
+	letter-spacing: 2px;
+	font-size: 18px;
+}
+/*=============================
+	Add Admin
+=============================*/
+#add-admin form
+{
+	height: 300px;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+#add-admin h3
+{
+	letter-spacing: 3px;
+	color: #00a54f;
+	font-size: 20px;
+	font-family: 'Cairo', sans-serif;
+	margin-top: -20px;
+}
+#confirm-add-admin
+{
+	height: 40px;
+	margin-top: 27px;
+}
+/*=============================
+	Edit Admin
+=============================*/
+#edit-admin form
+{
+	height: 300px;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+#edit-admin h3
+{
+	letter-spacing: 3px;
+	color: #00a54f;
+	font-size: 20px;
+	font-family: 'Cairo', sans-serif;
+	margin-top: -20px;
+}
+#edit-search-admin
+{
+	height: 40px;
+	margin-top: 27px;
+}
+#confirm-edit-admin
+{
+	height: 40px;
+	margin-top: 27px;
+}
+/*=============================
+	Delete Admin
+=============================*/
+#delete-admin form
+{
+	height: 300px;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+#delete-admin h3
+{
+	letter-spacing: 3px;
+	color: #00a54f;
+	font-size: 20px;
+	font-family: 'Cairo', sans-serif;
+	margin-top: -20px;
+}
+#delete-search-admin
+{
+	height: 40px;
+	margin-top: 27px;
+}
+#confirm-delete-admin
+{
+	height: 40px;
+	margin-top: 27px;
+}
+#delete-result
+{
+	margin-top: 75px;
+}
+#admin #delete-result #yes-delete-admin
+{
+	margin-top: 25px;
+	background-color: red;
+	cursor: pointer;
+	height: 40px;
+}
+#admin #delete-result #yes-delete-admin:focus,
+#admin #delete-result #yes-delete-admin:hover
+{
+	background-color: darkred;
+}
+/*=============================
+	Manage Archivist Section
+=============================*/
+#archivist-btn button
+{
+	width: 200px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+#archivist
+{
+	margin-top: 50px;
+}
+#archivist label
+{
+	font-family: 'Cairo', sans-serif;
+	letter-spacing: 2px;
+	font-size: 18px;
+}
+/*=============================
+	Add Archivist
+=============================*/
+#add-archivist form
+{
+	height: 300px;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+#add-archivist h3
+{
+	letter-spacing: 3px;
+	color: #00a54f;
+	font-size: 20px;
+	font-family: 'Cairo', sans-serif;
+	margin-top: -20px;
+}
+#confirm-add-archivist
+{
+	height: 40px;
+	margin-top: 27px;
+}
+/*=============================
+	Edit Archivist
+=============================*/
+#edit-archivist form
+{
+	height: 300px;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+#edit-archivist h3
+{
+	letter-spacing: 3px;
+	color: #00a54f;
+	font-size: 20px;
+	font-family: 'Cairo', sans-serif;
+	margin-top: -20px;
+}
+#edit-search-archivist
+{
+	height: 40px;
+	margin-top: 27px;
+}
+#confirm-edit-archivist
+{
+	height: 40px;
+	margin-top: 27px;
+}
+/*=============================
+	Delete Archivist
+=============================*/
+#delete-archivist form
+{
+	height: 300px;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+#delete-archivist h3
+{
+	letter-spacing: 3px;
+	color: #00a54f;
+	font-size: 20px;
+	font-family: 'Cairo', sans-serif;
+	margin-top: -20px;
+}
+#delete-search-archivist
+{
+	height: 40px;
+	margin-top: 27px;
+}
+#confirm-delete-archivist
+{
+	height: 40px;
+	margin-top: 27px;
+}
+#delete-result
+{
+	margin-top: 75px;
+}
+#archivist #delete-result #yes-delete-archivist
+{
+	margin-top: 25px;
+	background-color: red;
+	cursor: pointer;
+	height: 40px;
+}
+#archivist #delete-result #yes-delete-archivist:focus,
+#archivist #delete-result #yes-delete-archivist:hover
+{
+	background-color: darkred;
+}
+/*=============================
+	Manage Technician Section
+=============================*/
+#technician-btn button
+{
+	width: 200px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+#technician
+{
+	margin-top: 50px;
+}
+#technician label
+{
+	font-family: 'Cairo', sans-serif;
+	letter-spacing: 2px;
+	font-size: 18px;
+}
+/*=============================
+	Add Technician
+=============================*/
+#add-technician form
+{
+	height: 300px;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+#add-technician h3
+{
+	letter-spacing: 3px;
+	color: #00a54f;
+	font-size: 20px;
+	font-family: 'Cairo', sans-serif;
+	margin-top: -20px;
+}
+#confirm-add-technician
+{
+	height: 40px;
+	margin-top: 27px;
+}
+/*=============================
+	Edit Technician
+=============================*/
+#edit-technician form
+{
+	height: 300px;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+#edit-technician h3
+{
+	letter-spacing: 3px;
+	color: #00a54f;
+	font-size: 20px;
+	font-family: 'Cairo', sans-serif;
+	margin-top: -20px;
+}
+#edit-search-technician
+{
+	height: 40px;
+	margin-top: 27px;
+}
+#confirm-edit-technician
+{
+	height: 40px;
+	margin-top: 27px;
+}
+/*=============================
+	Delete Technician
+=============================*/
+#delete-technician form
+{
+	height: 300px;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+#delete-technician h3
+{
+	letter-spacing: 3px;
+	color: #00a54f;
+	font-size: 20px;
+	font-family: 'Cairo', sans-serif;
+	margin-top: -20px;
+}
+#delete-search-technician
+{
+	height: 40px;
+	margin-top: 27px;
+}
+#confirm-delete-technician
+{
+	height: 40px;
+	margin-top: 27px;
+}
+#delete-result
+{
+	margin-top: 75px;
+}
+#technician #delete-result #yes-delete-technician
+{
+	margin-top: 25px;
+	background-color: red;
+	cursor: pointer;
+	height: 40px;
+}
+#technician #delete-result #yes-delete-technician:focus,
+#technician #delete-result #yes-delete-technician:hover
+{
+	background-color: darkred;
+}
+/*=============================
+	Manage Arrondissement Section
+=============================*/
+#arrondissement-btn button
+{
+	width: 200px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+#arrondissement
+{
+	margin-top: 50px;
+}
+#arrondissement label
+{
+	font-family: 'Cairo', sans-serif;
+	letter-spacing: 2px;
+	font-size: 18px;
+}
+/*=============================
+	Add Arrondissement
+=============================*/
+#add-arrondissement form
+{
+	height: 300px;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+#add-arrondissement h3
+{
+	letter-spacing: 3px;
+	color: #00a54f;
+	font-size: 20px;
+	font-family: 'Cairo', sans-serif;
+	margin-top: -20px;
+}
+#confirm-add-arrondissement
+{
+	height: 40px;
+	margin-top: 27px;
+}
+/*=============================
+	Manage History Section
+=============================*/
+#admin-history tbody
+{
+	display: block;
+	height: 245px;
+	overflow: auto;
+	scrollbar-width: none;
+}
+#admin-history thead,
+#admin-history tbody tr
+{
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+/*=============================
+	Archive Output
+=============================*/
+#release-folder form
+{
+	height: 400px;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+#confirm-add-folder
+{
+	height: 40px;
+	margin-top: 27px;
+}
+/*=============================
+	Archive Intput
+=============================*/
+#search-receipt-number
+{
+	height: 40px;
+	margin-top: 27px;
+}
+#return-folder
+{
+	cursor: pointer;
+	height: 40px;
+}
+#archive-result
+{
+	margin-left: 50px;
+	padding: 50px;
+	border-radius: .25rem;
+}
+/*=============================
+	Archive History
+=============================*/
+#search-archive-history
+{
+	height: 40px;
+	margin-top: 27px;
+}
+#archives tbody
+{
+	display: block;
+	height: 245px;
+	overflow: auto;
+	scrollbar-width: none;
+}
+#archives thead,
+#archives tbody tr
+{
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<!-- Title -->
+		<title>OTC</title>
+		<!-- The Author of this page -->
+		<meta name="author" content="Mohamed Adem Ben Moussa">
+		<!-- Specify the character encoding of your content -->
+		<meta charset="UTF-8">
+		<!-- Tell Internet Explorer to use the latest Rendering Engine -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- Setting the viewport to make your website look good on all devices -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Basic SEO -->
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<!-- Robot.txt file to exclude Web Robots for specific files -->
+		<meta name="robots" content="noindex, nofollow">
+		<!-- Icon -->
+		<link rel="shortcut icon" type="image/png" href="../img/logo.png">
+		<!-- Google Fonts -->
+		<link rel="stylesheet" href="../fonts/Cairo/Cairo.css">
+		<!-- UIkit CSS 3.1.5 -->
+		<link rel="stylesheet" type="text/css" href="../css/uikit/uikit.min.css">
+		<!-- Toastr CSS 2.1.3 -->
+		<link rel="stylesheet" type="text/css" href="../css/toastr/toastr.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	</head>
+	<body>
+
+		<!-- Preloader -->
+		<div id="preloader">
+			<div id="status">
+				&nbsp;
+			</div>
+		</div>
+		<!-- End Preloader -->
+
+		<div id="outer-home">
+			<div id="inner-home" uk-grid>
+				<!-- Left Menu -->
+				<div id="left-menu" class="uk-width-1-6">
+					<div class="uk-text-center"><img src="../img/logo.png"></div>
+					<!-- Left Menu Buttons -->
+					<ul class="uk-nav uk-nav-default uk-text-center" uk-switcher="connect: #sections; animation: uk-animation-fade;">
+						<li><button class="uk-button uk-width-1-1 otc-btn" uk-tooltip="Sortie de Dossiers">Sortie</button></li>
+						<li><button class="uk-button uk-width-1-1 otc-btn" uk-tooltip="Retour de Dossiers">Retour</button></li>
+						<li><button class="uk-button uk-width-1-1 otc-btn" uk-tooltip="Consultation des Archives">Consultaion</button></li>
+						<li><button class="uk-button uk-width-1-1 otc-btn logout-btn" uk-tooltip="Déconnexion">Déconnexion</button></li>
+					</ul>
+				</div>
+				<!-- Home Sections -->
+				<div id="home" class="uk-width-expand">
+					<div class="uk-text-center">
+						<h1 class="uk-heading-small home-heading"><span>O</span>ffice de la <span>T</span>opographie et du <span>C</span>adastre</h1>
+					</div>
+					<ul id="sections" class="uk-switcher uk-margin">
+						<!-- Release of Archives -->
+						<li>
+							<div class="uk-text-center">
+								<h3>Sortie de Dossiers</h3>
+								<div id="release-folder">
+									<form uk-grid>
+										<!-- Receipt Number -->
+										<div class="uk-width-1-3">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="add-receipt-number">Numéro de Bon</label></div>
+												<div class="uk-inline uk-width-1-1">
+													<span class="uk-form-icon" uk-icon="icon: tag"></span>
+													<input id="add-receipt-number" class="uk-input" type="text" placeholder="Numéro de Bon">
+												</div>
+											</div>
+											<!-- Necessary Input Error -->
+											<div id="add-receipt-number-error"><small>Ce champ est obligatoire !</small></div>
+											<!-- Necessary Input Error -->
+											<div id="add-receipt-number-exists-error"><small>Il semble que le numéro de reçu est déjà utilisé avant !</small></div>
+										</div>
+										<!-- Receipt Date -->
+										<div class="uk-width-1-3">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="add-receipt-date">Date de Bon</label></div>
+												<input id="add-receipt-date" class="uk-input" type="date">
+											</div>
+											<!-- Necessary Input Error -->
+											<div id="add-receipt-date-error"><small>Ce champ est obligatoire !</small></div>
+										</div>
+										<!-- Receipt User -->
+										<div class="uk-width-1-3">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="add-receipt-user">Demandeur</label></div>
+												<select class="uk-input uk-select" id="add-receipt-user">
+													<!-- Data will be loaded from JavaScript -->
+													<option selected hidden disabled>Demandeur d'Archive</option>
+												</select>
+											</div>
+											<!-- Necessary Input Error -->
+											<div id="add-receipt-user-error"><small>Ce champ est obligatoire !</small></div>
+										</div>
+										<!-- Folder Number -->
+										<div class="uk-width-1-3">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="add-folder-number">Numéro de Dossier</label></div>
+												<div class="uk-inline uk-width-1-1">
+													<span class="uk-form-icon" uk-icon="icon: info"></span>
+													<input id="add-folder-number" class="uk-input" type="text" placeholder="Numéro de Dossier">
+												</div>
+											</div>
+											<!-- Necessary Input Error -->
+											<div id="add-folder-number-error"><small>Ce champ est obligatoire !</small></div>
+										</div>
+										<!-- Folder Cadastre -->
+										<div class="uk-width-1-3">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="add-folder-cadastre">Numéro de Cadastre</label></div>
+												<div class="uk-inline uk-width-1-1">
+													<span class="uk-form-icon" uk-icon="icon: info"></span>
+													<input id="add-folder-cadastre" class="uk-input" type="text" placeholder="Numéro de Cadastre">
+												</div>
+											</div>
+											<!-- Necessary Input Error -->
+											<div id="add-folder-cadastre-error"><small>Ce champ est obligatoire !</small></div>
+										</div>
+										<!-- Folder Type -->
+										<div class="uk-width-1-3">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="add-folder-type">Nature de Piéce</label></div>
+												<select class="uk-input uk-select" id="add-folder-type">
+													<!-- Data will be loaded from JavaScript -->
+													<option selected hidden disabled>Nature de Piéce</option>
+													<option value="CARTON">CARTON</option>
+													<option value="CALQUE">CALQUE</option>
+													<option value="CODEATRACE">CODEATRACE</option>
+													<option value="DOSSIER CADASTRE">DOSSIER CADASTRE</option>
+													<option value="PLAN MINUTE">PLAN MINUTE</option>
+												</select>
+											</div>
+											<!-- Necessary Input Error -->
+											<div id="add-folder-type-error"><small>Ce champ est obligatoire !</small></div>
+										</div>
+										<!-- Folder Ration -->
+										<div class="uk-width-1-2">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="add-folder-rat">Dossier Rat.</label></div>
+												<div class="uk-inline uk-width-1-1">
+													<span class="uk-form-icon" uk-icon="icon: info"></span>
+													<input id="add-folder-rat" class="uk-input" type="text" placeholder="Dossier Rat.">
+												</div>
+											</div>
+											<!-- Necessary Input Error -->
+											<div id="add-folder-rat-error"><small>Ce champ est obligatoire !</small></div>
+										</div>
+										<!-- Folder Name -->
+										<div class="uk-width-1-2">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="add-folder-name">Nom Dossier</label></div>
+												<div class="uk-inline uk-width-1-1">
+													<span class="uk-form-icon" uk-icon="icon: info"></span>
+													<input id="add-folder-name" class="uk-input" type="text" placeholder="Nom Dossier">
+												</div>
+											</div>
+											<!-- Necessary Input Error -->
+											<div id="add-folder-name-error"><small>Ce champ est obligatoire !</small></div>
+										</div>
+										<!-- Folder Carton -->
+										<div class="uk-width-1-2">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="add-folder-carton">Nombre de Cartons</label></div>
+												<div class="uk-inline uk-width-1-1">
+													<span class="uk-form-icon" uk-icon="icon: info"></span>
+													<input id="add-folder-carton" class="uk-input" type="number" placeholder="Nombre de Cartons">
+												</div>
+											</div>
+											<!-- Necessary Input Error -->
+											<div id="add-folder-carton-error"><small>Ce champ est obligatoire !</small></div>
+										</div>
+										<!-- Folder Plans -->
+										<div class="uk-width-1-2">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="add-folder-plans">Nombre de Plans</label></div>
+												<div class="uk-inline uk-width-1-1">
+													<span class="uk-form-icon" uk-icon="icon: info"></span>
+													<input id="add-folder-plans" class="uk-input" type="number" placeholder="Nombre de Plans">
+												</div>
+											</div>
+											<!-- Necessary Input Error -->
+											<div id="add-folder-plans-error"><small>Ce champ est obligatoire !</small></div>
+										</div>
+										<!-- Expected Return Date -->
+										<div class="uk-width-1-2">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="add-folder-date-limit">Date Retour Prévu</label></div>
+												<div class="uk-inline uk-width-1-1">
+													<span class="uk-form-icon" uk-icon="icon: info"></span>
+													<input id="add-folder-date-limit" class="uk-input" type="date" readonly>
+												</div>
+											</div>
+										</div>
+										<!-- Confirm Button -->
+										<div class="uk-width-1-2">
+											<button id="confirm-add-folder" class="uk-button otc-btn uk-width-1-1">Terminé</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</li>
+						<!-- Back of Archives -->
+						<li>
+							<div id="archive-input" class="uk-text-center">
+								<h3>Retour de Dossiers</h3>
+								<form uk-grid>
+									<!-- Receipt Number -->
+									<div class="uk-width-1-3">
+										<div class="uk-margin">
+											<div class="uk-text-left"><label class="uk-form-label" for="pick-receipt-number">Choisir le Numéro de Bon</label></div>
+											<select class="uk-input uk-select" id="pick-receipt-number">
+												<!-- Data will be loaded from JavaScript -->
+												<option selected hidden disabled>Choisir le Numéro de Bon</option>
+											</select>
+										</div>
+										<!-- Necessary Input Error -->
+										<div id="pick-receipt-number-error"><small>Ce champ est obligatoire !</small></div>
+									</div>
+									<!-- Receipt Number -->
+									<div class="uk-width-1-3">
+										<div class="uk-margin">
+											<div class="uk-text-left"><label class="uk-form-label" for="tipe-receipt-number">ou Saisir le Numéro de Bon</label></div>
+											<div class="uk-inline uk-width-1-1">
+												<span class="uk-form-icon" uk-icon="icon: tag"></span>
+												<input id="tipe-receipt-number" class="uk-input" type="text" placeholder="Saisir le Numéro de Bon">
+											</div>
+										</div>
+										<!-- Necessary Input Error -->
+										<div id="tipe-receipt-number-error"><small>Ce champ est obligatoire !</small></div>
+										<!-- Necessary Input Error -->
+										<div id="tipe-receipt-number-doesnt-exist-error"><small>Il semble que le numéro de reçu n'existe pas !</small></div>
+									</div>
+									<!-- Confirm Button -->
+									<div class="uk-width-1-3">
+										<button id="search-receipt-number" class="uk-button otc-btn uk-width-1-1">Chercher</button>
+									</div>
+									<div id="archive-result" class="uk-width-1-1">
+										<h4>l'Archive <b><span id="result-folder-name"></span></b> dont le Numéro est <b><span id="result-folder-number"></span></b> qui été attiré par <b><span id="result-folder-user"></span></b> en <b><span id="result-folder-date"></span></b><span id="archive-result_inner"></span></h4>
+									</div>
+								</form>
+							</div>
+						</li>
+						<!-- Archives Consultation -->
+						<li>
+							<div class="uk-text-center">
+								<h3>Consultation des Archives</h3>
+								<div id="archives">
+									<form uk-grid>
+										<!-- Search History by Date -->
+										<div class="uk-width-1-3">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="archive-start-date">Date de Début</label></div>
+												<input id="archive-start-date" class="uk-input" type="date">
+											</div>
+											<!-- Input Error -->
+											<div><small></small></div>
+										</div>
+										<div class="uk-width-1-3">
+											<div class="uk-margin">
+												<div class="uk-text-left"><label class="uk-form-label" for="archive-end-date">Date de Fin</label></div>
+												<input id="archive-end-date" class="uk-input" type="date">
+											</div>
+											<!-- Input Error -->
+											<div><small></small></div>
+										</div>
+										<!-- Search Button -->
+										<div class="uk-width-1-3">
+											<button id="search-archive-history" class="uk-button otc-btn uk-width-1-1">Recherche</button>
+										</div>
+									</form>
+									<table class="uk-table uk-table-divider uk-table-hover uk-width-1-1">
+										<thead>
+											<tr>
+												<th>Bon</th>
+												<th>Demandeur</th>
+												<th>Archive</th>
+												<th>Date de Sortie</th>
+												<th>Date Prévu</th>
+												<th>Date de Retour</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- DATA will be dispayed here from JavaScript -->
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- jQuery JavaScript 3.4.1 -->
+		<script type="text/javascript" src="../js/jquery/jquery-3.4.1.min.js"></script>
+		<!-- UIkit JavaScript 3.1.5 -->
+		<script type="text/javascript" src="../js/uikit/uikit.min.js"></script>
+		<!-- UIkit Icons JavaScript 3.1.5 -->
+		<script type="text/javascript" src="../js/uikit/uikit-icons.min.js"></script>
+		<!-- Toastr JavaScript 2.1.3 -->
+		<script type="text/javascript" src="../js/toastr/toastr.min.js"></script>
+		<!-- Custom JavaScript -->
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<!-- Title -->
+		<title>OTC</title>
+		<!-- The Author of this page -->
+		<meta name="author" content="Mohamed Adem Ben Moussa">
+		<!-- Specify the character encoding of your content -->
+		<meta charset="UTF-8">
+		<!-- Tell Internet Explorer to use the latest Rendering Engine -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- Setting the viewport to make your website look good on all devices -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Basic SEO -->
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<!-- Robot.txt file to exclude Web Robots for specific files -->
+		<meta name="robots" content="noindex, nofollow">
+		<!-- Icon -->
+		<link rel="shortcut icon" type="image/png" href="img/logo.png">
+		<!-- Google Fonts -->
+		<link rel="stylesheet" href="fonts/Cairo/Cairo.css">
+		<!-- UIkit CSS 3.1.5 -->
+		<link rel="stylesheet" type="text/css" href="css/uikit/uikit.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+
+		<!-- Preloader -->
+		<div id="preloader">
+			<div id="status">
+				&nbsp;
+			</div>
+		</div>
+		<!-- End Preloader -->
+
+		<!-- Sign in Form -->
+		<div id="signin" class="uk-card uk-card-default uk-position-center">
+			<div class="uk-card-header uk-text-center">
+				<img src="img/logo.png">
+				<h3 class="uk-card-title uk-margin-remove-bottom">Connexion</h3>
+			</div>
+			<form>
+				<div class="uk-card-body">
+					<!-- Sign in Username -->
+					<div class="uk-margin">
+						<div class="uk-inline uk-width-1-1">
+							<span class="uk-form-icon" uk-icon="icon: user"></span>
+							<input id="signin-matricule" class="uk-input" type="text" placeholder="Nom d'utilisateur">
+						</div>
+						<!-- Wrong Username Error -->
+						<div id="invalid-signin-matricule"><small>Vérifiez votre nom d'utilisateur!</small></div>
+					</div>
+					<!-- Sign in Password -->
+					<div class="uk-margin">
+						<div class="uk-inline uk-width-1-1">
+							<span id="signin-password-icon" class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+							<input id="signin-password" class="uk-input" type="password" placeholder="Mot de Passe">
+						</div>
+						<!-- Wrong Password Error -->
+						<div id="invalid-signin-password"><small>Vérifiez votre mot de passe!</small></div>
+						<!-- View Password -->
+						<div class="uk-margin-small-top">
+							<label><input id="signin-password-btn" class="uk-checkbox" type="checkbox">
+							&nbsp;&nbsp;
+							<small id="signin-show-password">Afficher le mot de passe</small></label>
+						</div>
+						<br>
+					</div>
+				</div>
+
+				<div class="uk-card-footer uk-text-center">
+					<button id="signin-btn" class="uk-button uk-width-1-1 otc-btn">Connexion</button>
+				</div>
+			</form>
+		</div>
+		<!-- End Sign up Form -->
+
+		<!-- jQuery JavaScript 3.4.1 -->
+		<script type="text/javascript" src="js/jquery/jquery-3.4.1.min.js"></script>
+		<!-- UIkit JavaScript 3.1.5 -->
+		<script type="text/javascript" src="js/uikit/uikit.min.js"></script>
+		<!-- UIkit Icons JavaScript 3.1.5 -->
+		<script type="text/javascript" src="js/uikit/uikit-icons.min.js"></script>
+		<!-- Custom JavaScript -->
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>

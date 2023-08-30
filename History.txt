@@ -1,0 +1,20 @@
+C = Connect + IP
+D = Deconnect + IP
+WP = Wrong Password + IP
+
+AA = Add Admin + ADMIN
+EA = Edit Admin + ADMIN
+DA = Delete Admin + ADMIN
+
+AC = Add Archivist + Archivist
+EC = Edit Archivist + Archivist
+DC = Delete Archivist + Archivist
+
+AT = Add Technician + Technician
+ET = Edit Technician + Technician
+DT = Delete Technician + Technician
+
+AR = Add Arrondissement + Arrondissement
+
+FO = Folder Out + Technician,Folder
+FI = Folder In + Receipt
